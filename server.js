@@ -3,10 +3,7 @@ const mongoose = require('mongoose');
 const dotenv = require('dotenv');
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const UseController = require('./controllers/userController');
-const CourseController = require('./controllers/courseController');
-const RoomController = require('./controllers/roomController');
-const StudentContoller = require('./controllers/StudentContoller');
+const PizzaController = require('./controllers/PizzaController');
 
 dotenv.config();
 const app = express();
@@ -30,10 +27,8 @@ mongoose.connection.once('open', () => {
     console.log('Database Connection Sucessfull');
 });
 
-app.use('/user', UseController());
-app.use('/rooms', RoomController());
-app.use('/course', CourseController());
-app.use('/student', StudentContoller());
+app.use('/pizza', PizzaController());
+
 
 
 
